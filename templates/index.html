@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fortnite News!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="indexcontainer">
+        <h1 style="color: rebeccapurple;">Fortnite !</h1>
+        <h1><a href="{{ linkbr }}">Pour aller aux news du battle royal</a></h1><br>
+        <h1><a href="{{ linkstw }}">Pour aller aux news de sauver le monde</a></h1>
+        <h1><a href="{{ linkbanners }}">Pour aller voir les bannières du jeux</a></h1>
+        <h1><a href="{{ linkgetplayer }}">Pour aller voir vos statistiques</a></h1>
+        <h1><a href="{{ linkmap }}">Pour aller voir la map</a></h1>
+        <h1><a
+                href="https://discord.com/api/oauth2/authorize?client_id=927994229022687254&permissions=8&scope=bot%20applications.commands">Pour
+                inviter FortniteBot sur son serveur</a></h1>
+
+    </div>
+    <form method="POST">
+        <div class="form__fieldset">
+            <label for="date" class="form__label">Nom:</label>
+            <input type="text" name="NOM" id="NOM" class="css-input" />
+        </div>
+        <div class="form__fieldset">
+            <label for="date" class="form__label">Prenom:</label>
+            <input type="text" name="PRENOM" id="PRENOM" class="css-input" />
+        </div>
+        <div class="form__fieldset">
+            <label for="date" class="form__label">Email:</label>
+            <input type="text" name="EMAIL" id="EMAIL" class="css-input" />
+        </div>
+
+        <div class="form__fieldset">
+            <input class="btn" type="submit" value="Valider" />
+        </div>
+    </form>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#0099ff" fill-opacity="10"
+            d="M0,160L34.3,170.7C68.6,181,137,203,206,186.7C274.3,171,343,117,411,106.7C480,96,549,128,617,165.3C685.7,203,754,245,823,240C891.4,235,960,181,1029,133.3C1097.1,85,1166,43,1234,26.7C1302.9,11,1371,21,1406,26.7L1440,32L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+        </path>
+    </svg>
+</body>
+
+</html>

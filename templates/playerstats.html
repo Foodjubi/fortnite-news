@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{{ name }} stats</title>
+</head>
+
+<body>
+    <div class="statscontainer">
+        <h1 class="title">Voici les statistiques de {{ name }} : </h1>
+        <ul>
+            <li><a href="#battlepass">Battlepass</a></li>
+            {% for i in all %}
+            <li><a href="#{{i}}">{{i}}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="/" class="acceuil">Acceuil</a>
+        <div class="overall">
+
+            <h2 id="battlepass">Battle Passe : </h2>
+
+
+            <div class="battlepass">
+                <h3>Level :</h3>
+                <p>{{ battlePass["level"] }}</p>
+                <h3>Progress :</h3>
+                <p>{{ battlePass["progress"] }}</p>
+                <h3>ID COMPTE :</h3>
+                <p>{{ idcount["account"]["id"] }}</p>
+            </div>
+
+            {% for i in all %}
+
+            <h2 id="{{i}}">Statistiques {{i}} : </h2>
+
+            <div class="timeplayed" id="timeplayed">
+                <h3>Minutes joué :</h3>
+                <p>{{ all[i]["minutesPlayed"] }}</p>
+                <h3>Total Heures joué :</h3>
+                <p>{{ hoursPlayed }}</p>
+                <h3>Total Jours joué :</h3>
+                <p>{{ daysPlayed }}</p>
+                <h3>Partis joué :</h3>
+                <p>{{ all[i]["matches"] }}</p>
+            </div>
+
+            <div class="score" id="score">
+                <h3>Score :</h3>
+                <p>{{ i["score"] }}</p>
+            </div>
+
+            <div class="top" id="top">
+                <h3>Top 1 :</h3>
+                <p>{{ all[i]["wins"] }}</p>
+                <h3>Top 3 :</h3>
+                <p>{{ all[i]["top3"] }}</p>
+                <h3>Top 5 :</h3>
+                <p>{{ all[i]["top5"] }}</p>
+                <h3>Top 6 :</h3>
+                <p>{{ all[i]["top6"] }}</p>
+                <h3>Top 10 :</h3>
+                <p>{{ all[i]["top10"] }}</p>
+                <h3>Top 12 :</h3>
+                <p>{{ all[i]["top12"] }}</p>
+                <h3>Top 25 :</h3>
+                <p>{{ all[i]["top25"] }}</p>
+                <h3>Win-Rate :</h3>
+                <p>{{ all[i]["winRate"] }}</p>
+            </div>
+
+            <div class="killanddeaths" id="killanddeaths">
+                <h3>Eliminations :</h3>
+                <p>{{ all[i]["kills"] }}</p>
+                <h3>Eliminations par matches :</h3>
+                <p>{{ all[i]["killsPerMatch"] }}</p>
+                <h3>Morts :</h3>
+                <p>{{ all[i]["deaths"] }}</p>
+                <h3>Kd :</h3>
+                <p>{{ all[i]["kd"] }}</p>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#0099ff" fill-opacity="10"
+            d="M0,160L34.3,170.7C68.6,181,137,203,206,186.7C274.3,171,343,117,411,106.7C480,96,549,128,617,165.3C685.7,203,754,245,823,240C891.4,235,960,181,1029,133.3C1097.1,85,1166,43,1234,26.7C1302.9,11,1371,21,1406,26.7L1440,32L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+        </path>
+    </svg>
+</body>
+
+</html>
